@@ -22,15 +22,16 @@
         "hyperf/guzzle": "~2.2.0",
         "hyperf/http-server": "~2.2.0",
         "hyperf/json-rpc": "~2.2.0",
-        "hyperf/logger": "~2.2.0",
+        "hyperf/logger": "^2.2",
         "hyperf/memory": "~2.2.0",
         "hyperf/process": "~2.2.0",
         "hyperf/redis": "~2.2.0",
         "hyperf/rpc": "~2.2.0",
-        "hyperf/rpc-client": "~2.2.0",
         "hyperf/rpc-server": "~2.2.0",
         "hyperf/service-governance": "~2.2.0",
-        "hyperf/service-governance-nacos": "^2.2"
+        "hyperf/service-governance-consul": "^2.2",
+        "hyperf/service-governance-nacos": "^2.2",
+        "phpseclib/phpseclib": "~3.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",

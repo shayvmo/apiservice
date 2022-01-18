@@ -16,16 +16,16 @@ use Swoole\Constant;
 return [
     'mode' => SWOOLE_PROCESS,
     'servers' => [
-//        [
-//            'name' => 'http',
-//            'type' => Server::SERVER_HTTP,
-//            'host' => '0.0.0.0',
-//            'port' => 9501,
-//            'sock_type' => SWOOLE_SOCK_TCP,
-//            'callbacks' => [
-//                Event::ON_REQUEST => [Hyperf\HttpServer\Server::class, 'onRequest'],
-//            ],
-//        ],
+        [
+            'name' => 'http',
+            'type' => Server::SERVER_HTTP,
+            'host' => '0.0.0.0',
+            'port' => 9501,
+            'sock_type' => SWOOLE_SOCK_TCP,
+            'callbacks' => [
+                Event::ON_REQUEST => [Hyperf\HttpServer\Server::class, 'onRequest'],
+            ],
+        ],
         [
             // 这里是HTTP通讯形式
             'name' => 'jsonrpc-http',
@@ -37,21 +37,21 @@ return [
                 Event::ON_REQUEST => [\Hyperf\JsonRpc\HttpServer::class, 'onRequest'],
             ],
         ],
-        [
-            // 这里是TCP通讯形式
-            'name' => 'jsonrpc',
-            'type' => Server::SERVER_BASE,
-            'host' => '0.0.0.0',
-            'port' => 9501,
-            'sock_type' => SWOOLE_SOCK_TCP,
-            'callbacks' => [
-                Event::ON_RECEIVE => [\Hyperf\JsonRpc\TcpServer::class, 'onReceive'],
-            ],
-            'settings' => [
-                'open_eof_split' => true,
-                'package_eof' => "\r\n",
-            ],
-        ],
+//        [
+//            // 这里是TCP通讯形式
+//            'name' => 'jsonrpc',
+//            'type' => Server::SERVER_BASE,
+//            'host' => '0.0.0.0',
+//            'port' => 9501,
+//            'sock_type' => SWOOLE_SOCK_TCP,
+//            'callbacks' => [
+//                Event::ON_RECEIVE => [\Hyperf\JsonRpc\TcpServer::class, 'onReceive'],
+//            ],
+//            'settings' => [
+//                'open_eof_split' => true,
+//                'package_eof' => "\r\n",
+//            ],
+//        ],
     ],
     'settings' => [
         Constant::OPTION_ENABLE_COROUTINE => true,

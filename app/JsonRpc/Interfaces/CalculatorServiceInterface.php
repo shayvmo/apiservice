@@ -9,12 +9,14 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-return [
-    'http' => [
-        \App\Middleware\CorsMiddleware::class
-    ],
-    'jsonrpc-http' => [
-        \App\Middleware\CorsMiddleware::class,
-        \App\Middleware\Auth\CheckUserMiddleware::class,
-    ],
-];
+namespace App\JsonRpc\Interfaces;
+
+use Hyperf\RpcServer\Annotation\RpcService;
+
+/**
+ * @RpcService
+ */
+interface CalculatorServiceInterface
+{
+    public function sum(int $a, int $b): int;
+}
